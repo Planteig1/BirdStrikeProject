@@ -10,6 +10,7 @@
 html {
     scroll-snap-type: y mandatory;
     scroll-padding-top: 50px;
+    scroll-behavior: smooth;
 }
 
 main {
@@ -57,7 +58,12 @@ p {
     margin-left: 2rem;
 }
 
-/* Introduction animation */
+.introduction {
+    height: 800px;
+}
+
+
+/* Flip-text-animation */
 .flip-text-container {
     display: block;
     justify-content: center;
@@ -118,6 +124,7 @@ img {
 .picture {
     display: flex;
     justify-content: right;
+    margin-top: -100px;
 }
 
 .picture h1 {
@@ -183,9 +190,6 @@ img {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.introduction {
-    height: 100vh;
-}
 
 
 

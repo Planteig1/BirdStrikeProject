@@ -312,7 +312,7 @@ const chart3 = new Chart(ctx3, {
         labels: [ 'Deer', 'Moose', 'Bear', 'Coyote', 'Seal', 'Dog', 'Cattle', 'Horse', 'Possum', 'Lagomorphs', 'Snake'],
         datasets: [{
             label: 'Animal species closer to extinction',
-            data: [ 16, 6, 4, 800, 1, 170, 12, 5, 420, 22, 140],
+            data: [ 16, 6, 4, 800, 1, 170, 12, 5, 420, 697, 140],
             borderWidth: 4,
             backgroundColor: "#70db70"
         }]
