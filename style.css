@@ -1,6 +1,7 @@
 /* Universal Design*/
 * {
     background-color: darkslategrey;
+    user-select: none;
 }
 
 /* Scroll effect */
@@ -121,8 +122,6 @@ img {
 #now-text {
     font-size: 40px;
 }
-
-
 
 
 
