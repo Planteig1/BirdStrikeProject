@@ -58,7 +58,7 @@ p {
 }
 
 /* Introduction animation */
-.introduction {
+.flip-text-container {
     display: block;
     justify-content: center;
     text-transform: uppercase;
@@ -118,7 +118,6 @@ img {
 .picture {
     display: flex;
     justify-content: right;
-    margin: 10px;
 }
 
 .picture h1 {
@@ -183,6 +182,11 @@ img {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+.introduction {
+    height: 100vh;
+}
+
 
 
 

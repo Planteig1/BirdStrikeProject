@@ -303,6 +303,7 @@ function updateChart () {
 
 const ctx3 = document.querySelector('#chart3');
 
+let delayed;
 const chart3 = new Chart(ctx3, {
     type: 'bar',
     data: {
@@ -350,6 +351,18 @@ const chart3 = new Chart(ctx3, {
                     display: false
                 }
             }
+        }, animation: {
+            // Delay animation from chart.js documentation
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 300 + context.datasetIndex * 100;
+                }
+                return delay;
+            },
         },
     }
 });
