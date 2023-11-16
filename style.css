@@ -23,7 +23,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    height: 50px;
+    height: 35px;
     padding: 10px;
     display: flex;
     flex-direction: row;
@@ -33,6 +33,7 @@ nav {
 
 p {
     font-size: 35px;
+    color: lightslategrey;
 }
 
 
@@ -51,27 +52,26 @@ p {
 }
 
 /* Introduction animation */
-
 .introduction {
     display: block;
     justify-content: center;
     text-transform: uppercase;
     color: white;
-    font-size: 50px;
+    font-size: 80px;
     padding-top: 200px;
     width: 100%;
     bottom: 45%;
 }
 
 #flip {
-    height: 70px;
+    height: 100px;
     overflow: hidden;
 }
 #flip > div > div {
     color:white;
-    padding:4px 12px;
-    height:45px;
-    margin-bottom:45px;
+    padding:8px 20px;
+    height:90px;
+    margin-bottom:90px;
     display:inline-block;
 }
 
@@ -90,18 +90,17 @@ p {
 }
 
 @keyframes show {
-    0% {margin-top:-270px;}
-    5% {margin-top:-180px;}
-    33% {margin-top:-180px;}
-    38% {margin-top:-90px;}
-    66% {margin-top:-90px;}
-    71% {margin-top:0;}
-    99.99% {margin-top:0;}
-    100% {margin-top:-270px;}
+    0% { margin-top: -540px; }
+    5% { margin-top: -360px; }
+    33% { margin-top: -360px; }
+    38% { margin-top: -180px; }
+    66% { margin-top: -180px; }
+    71% { margin-top: 0; }
+    99.99% { margin-top: 0; }
+    100% { margin-top: -540px; }
 }
 
 /* Animal picture*/
-
 img {
     height: 400px;
     border-radius: 10% /50%;
