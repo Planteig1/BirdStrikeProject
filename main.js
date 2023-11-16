@@ -215,98 +215,12 @@ let chart2 = new Chart(ctx2, {
     }
 });
 
-
-//Check Scroll position
-let alreadyHappened = 0
-function checkScrollPosition () {
-
-    const animatedChartPositionForChart2 = 1750
-    const animatedChartPositionForChart3 = 3000
-    //Chart 2 checker
-    if (window.scrollY >= animatedChartPositionForChart2 && alreadyHappened === 0) {
-       // updateChart()
-        console.log("Chart 2")
-        alreadyHappened = 1
-        setTimeout(() => {
-            alreadyHappened = 0
-        }, 10)
-    }
-}
-
-window.addEventListener("scroll",() => {
-    checkScrollPosition()
-})
-function updateChart () {
-
-    console.log("Updating chart")
-    //Checks if chart already exists and destroys it
-    if (chart2) {
-        chart2.destroy()
-    }
-    // Recreates the chart to restart the animation
-    chart2 = new Chart(ctx2, {
-        scaleFontColor: "white",
-        type: 'line',
-        data: {
-            labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAJ', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
-            datasets: [{
-                label: 'Bird strikes',
-                data: arrayWithXAndYDataPointsForPerMonth,
-                borderWidth: 4,
-                borderColor: "#70db70"
-            }]
-        },
-        options: {
-            plugins: {
-                title: {
-                    display: true,
-                    text: 'Bird strikes per month',
-                    position: 'top',
-                    color: 'white'
-                },
-                legend: {
-                    fontColor: "white",
-                    position: 'right'
-                }
-            },
-            scales: {
-                y: {
-                    ticks: {
-                        color: 'white'
-                    },
-                    beginAtZero: true,
-                    grid: {
-                        display: false
-                    },
-                    title: {
-                        display: true,
-                        text: 'count of bird strikes',
-                        color: 'white'
-                    }
-                },
-                x: {
-                    ticks: {
-                        color: 'white'
-                    },
-                    grid: {
-                        display: false
-                    }
-                }
-            },
-            animation: animation,
-            interaction: {
-                intersect: false
-            }
-        }
-    });
-}
-
 // Animal chart
 
 const ctx3 = document.querySelector('#chart3');
 
 let delayed;
-const chart3 = new Chart(ctx3, {
+let chart3 = new Chart(ctx3, {
     type: 'bar',
     data: {
         labels: [ 'Deer', 'Moose', 'Bear', 'Coyote', 'Seal', 'Dog', 'Cattle', 'Horse', 'Possum', 'Lagomorphs', 'Snake'],
@@ -368,4 +282,177 @@ const chart3 = new Chart(ctx3, {
         },
     }
 });
+
+
+
+//Check Scroll position
+let alreadyHappenedForChart2 = 0
+let alreadyHappenedForChart3 = 0
+function checkScrollPosition () {
+
+    // y position for when we want to update the chart
+    const animatedChartPositionForChart2 = 1750
+    const animatedChartPositionForChart3 = 2000
+
+    // Check to see if the scroll position is at the right position
+    let chart2InPosition = window.scrollY >= animatedChartPositionForChart2 && window.scrollY < animatedChartPositionForChart3
+    let chart3InPosition = window.scrollY >= animatedChartPositionForChart3
+
+    //Chart 2 checker
+    if (chart2InPosition && alreadyHappenedForChart2 === 0) {
+       updateChart(2)
+
+        alreadyHappenedForChart2 = 1
+        setTimeout(() => {
+            alreadyHappenedForChart2 = 0
+        }, 10000)
+        //Chart 3 checker
+    } else if (chart3InPosition && alreadyHappenedForChart3 === 0) {
+        updateChart(3)
+
+        alreadyHappenedForChart3 = 1
+        setTimeout(() => {
+            alreadyHappenedForChart3 = 0
+        }, 10000)
+    }
+
+}
+
+window.addEventListener("scroll",() => {
+    checkScrollPosition()
+})
+function updateChart (chartNumber) {
+    console.log("Updating chart " + chartNumber)
+    // Creates a variable with the name of the chart
+    let currentChart = "chart"+chartNumber
+    //Checks if chart already exists and destroys it
+
+
+        if (currentChart === "chart2") {
+
+            chart2.destroy()
+            chart2 = new Chart(ctx2, {
+                scaleFontColor: "white",
+                type: 'line',
+                data: {
+                    labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAJ', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+                    datasets: [{
+                        label: 'Bird strikes',
+                        data: arrayWithXAndYDataPointsForPerMonth,
+                        borderWidth: 4,
+                        borderColor: "#70db70"
+                    }]
+                },
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Bird strikes per month',
+                            position: 'top',
+                            color: 'white'
+                        },
+                        legend: {
+                            fontColor: "white",
+                            position: 'right'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: {
+                                color: 'white'
+                            },
+                            beginAtZero: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'count of bird strikes',
+                                color: 'white'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: 'white'
+                            },
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    animation: animation,
+                    interaction: {
+                        intersect: false
+                    }
+                }
+            });
+        } else if (currentChart === "chart3") {
+
+             chart3.destroy()
+            delayed = false;
+             chart3 = new Chart(ctx3, {
+                type: 'bar',
+                data: {
+                    labels: [ 'Deer', 'Moose', 'Bear', 'Coyote', 'Seal', 'Dog', 'Cattle', 'Horse', 'Possum', 'Lagomorphs', 'Snake'],
+                    datasets: [{
+                        label: 'Animal species closer to extinction',
+                        data: [ 16, 6, 4, 800, 1, 170, 12, 5, 420, 22, 140],
+                        borderWidth: 4,
+                        backgroundColor: "#70db70"
+                    }]
+                },
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Animal species struck by plane',
+                            position: 'top',
+                            color: 'white'
+                        },
+                        legend: {
+                            color: "white",
+                            position: 'bottom',
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: {
+                                color: 'white'
+                            },
+                            beginAtZero: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'count of bird strikes',
+                                color: 'white'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: 'white'
+                            },
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }, animation: {
+                        // Delay animation from chart.js documentation
+                        onComplete: () => {
+                            delayed = true;
+                        },
+                        delay: (context) => {
+                            let delay = 0;
+                            if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                                delay = context.dataIndex * 300 + context.datasetIndex * 100;
+                            }
+                            return delay;
+                        },
+                    },
+                }
+            });
+        }
+    // Recreates the chart to restart the animation
+}
 
