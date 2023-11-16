@@ -220,14 +220,16 @@ let chart2 = new Chart(ctx2, {
 let alreadyHappened = 0
 function checkScrollPosition () {
 
-    const animatedChartPosition = 1750
-
-    if (window.scrollY >= animatedChartPosition && alreadyHappened === 0) {
-        updateChart()
+    const animatedChartPositionForChart2 = 1750
+    const animatedChartPositionForChart3 = 3000
+    //Chart 2 checker
+    if (window.scrollY >= animatedChartPositionForChart2 && alreadyHappened === 0) {
+       // updateChart()
+        console.log("Chart 2")
         alreadyHappened = 1
         setTimeout(() => {
             alreadyHappened = 0
-        }, 10000)
+        }, 10)
     }
 }
 
