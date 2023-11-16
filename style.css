@@ -101,6 +101,7 @@ p {
 }
 
 /* Animal picture*/
+
 img {
     height: 400px;
     border-radius: 10% /50%;
@@ -111,6 +112,17 @@ img {
     justify-content: right;
     margin: 10px;
 }
+
+.picture h1 {
+    margin-top: 20px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+#now-text {
+    font-size: 40px;
+}
+
+
 
 
 
