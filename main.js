@@ -84,7 +84,10 @@ new Chart(ctx, {
             },
             legend: {
                 fontColor: "white",
-                position: 'right'
+                position: 'right',
+                labels: {
+                    color: "white"
+                }
             }
         },
         scales: {
@@ -196,7 +199,10 @@ let chart2 = new Chart(ctx2, {
             },
             legend: {
                 fontColor: "white",
-                position: 'right'
+                position: 'right',
+                labels: {
+                    color: "white"
+                }
             }
         },
         scales: {
@@ -269,6 +275,9 @@ let chart3 = new Chart(ctx3, {
             legend: {
                 color: "white",
                 position: 'bottom',
+                labels: {
+                    color: "white"
+                }
             }
         },
         scales: {
@@ -378,7 +387,10 @@ function updateChart (chartNumber) {
                         },
                         legend: {
                             fontColor: "white",
-                            position: 'right'
+                            position: 'right',
+                            labels: {
+                                color: "white"
+                            }
                         }
                     },
                     scales: {
@@ -415,7 +427,7 @@ function updateChart (chartNumber) {
             // Destroy the chart and create it again
              chart3.destroy()
             delayed = false;
-             chart3 = new Chart(ctx3, {
+            chart3 = new Chart(ctx3, {
                 type: 'bar',
                 data: {
                     labels: arrayWithAnimalNames,
@@ -437,6 +449,9 @@ function updateChart (chartNumber) {
                         legend: {
                             color: "white",
                             position: 'bottom',
+                            labels: {
+                                color: "white"
+                            }
                         }
                     },
                     scales: {
@@ -480,3 +495,12 @@ function updateChart (chartNumber) {
         }
 }
 
+// CARD FLIP
+
+const allCards = document.querySelectorAll(".card")
+
+allCards.forEach((card) => {
+    card.addEventListener("click",() => {
+
+    })
+})
