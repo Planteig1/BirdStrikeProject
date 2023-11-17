@@ -1,5 +1,6 @@
 // main.js
 const counterForBirdStrikes = document.querySelector("#counter-bird-strike")
+const counterForBirdYearsLost = document.querySelector("#counter-bird-year-lost")
 
 // Counter for bird strikes
 function birdCounter () {
@@ -18,6 +19,7 @@ function birdCounter () {
         }
         setTimeout(() => {
             counterForBirdStrikes.innerText = currentCount;
+            birdYearsLost()
 
             if (currentCount < countUpTo) {
                 countWithDelay(currentCount + 1);
@@ -29,6 +31,19 @@ function birdCounter () {
 // Initialize the counter
 birdCounter();
 
+
+// Average bird lifespan counter
+let sumForBirdYearsLost = 0
+function birdYearsLost () {
+    // Create a random number between 5 and 10 ( Average lifespan for waterfowl 31% of all strikes)
+    let randomYearsLost = Math.floor(Math.random()  * 6 + 5)
+
+    sumForBirdYearsLost += randomYearsLost
+
+    counterForBirdYearsLost.innerText = sumForBirdYearsLost
+
+
+}
 
 
 // Bird Strikes Per Year Chart
@@ -217,16 +232,28 @@ let chart2 = new Chart(ctx2, {
 
 // Animal chart
 
+// Format Data
+let arrayWithAnimalNames = [];
+let arrayWithAmountOfReportsForAnimals = [];
+function formatAnimalData () {
+    randomAnimalData.forEach((animal) => {
+        arrayWithAnimalNames.push(animal.species)
+        arrayWithAmountOfReportsForAnimals.push(animal.amount)
+    })
+}
+formatAnimalData()
+
 const ctx3 = document.querySelector('#chart3');
+
 
 let delayed;
 let chart3 = new Chart(ctx3, {
     type: 'bar',
     data: {
-        labels: [ 'Deer', 'Moose', 'Bear', 'Coyote', 'Seal', 'Dog', 'Cattle', 'Horse', 'Possum', 'Lagomorphs', 'Snake'],
+        labels: arrayWithAnimalNames,
         datasets: [{
             label: 'Animal species closer to extinction',
-            data: [ 16, 6, 4, 800, 1, 170, 12, 5, 420, 697, 140],
+            data: arrayWithAmountOfReportsForAnimals,
             borderWidth: 4,
             backgroundColor: "#70db70"
         }]
@@ -325,11 +352,9 @@ function updateChart (chartNumber) {
     console.log("Updating chart " + chartNumber)
     // Creates a variable with the name of the chart
     let currentChart = "chart"+chartNumber
-    //Checks if chart already exists and destroys it
-
 
         if (currentChart === "chart2") {
-
+            // Destroy the chart and create it again
             chart2.destroy()
             chart2 = new Chart(ctx2, {
                 scaleFontColor: "white",
@@ -387,16 +412,16 @@ function updateChart (chartNumber) {
                 }
             });
         } else if (currentChart === "chart3") {
-
+            // Destroy the chart and create it again
              chart3.destroy()
             delayed = false;
              chart3 = new Chart(ctx3, {
                 type: 'bar',
                 data: {
-                    labels: [ 'Deer', 'Moose', 'Bear', 'Coyote', 'Seal', 'Dog', 'Cattle', 'Horse', 'Possum', 'Lagomorphs', 'Snake'],
+                    labels: arrayWithAnimalNames,
                     datasets: [{
                         label: 'Animal species closer to extinction',
-                        data: [ 16, 6, 4, 800, 1, 170, 12, 5, 420, 22, 140],
+                        data: arrayWithAmountOfReportsForAnimals,
                         borderWidth: 4,
                         backgroundColor: "#70db70"
                     }]
@@ -453,6 +478,5 @@ function updateChart (chartNumber) {
                 }
             });
         }
-    // Recreates the chart to restart the animation
 }
 

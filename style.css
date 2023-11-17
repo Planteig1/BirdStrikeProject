@@ -30,10 +30,14 @@ nav {
     height: 35px;
     padding: 10px;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     z-index: 1000;
 }
-
+nav > div {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
 
 p {
     font-size: 35px;
