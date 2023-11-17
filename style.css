@@ -36,7 +36,15 @@ nav {
 nav > div {
     display: flex;
     align-items: center;
-    margin: 10px;
+    margin: 25px;
+}
+
+.dead-bird {
+    position: fixed;
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }
 
 p {
@@ -209,15 +217,12 @@ p {
 
 
 /*Conclusion*/
-.conclusion {
-    height: 150vh;
+ul {
+    list-style-type: none;
 }
-
 .card-list {
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
-    list-style-type: none;
 }
 
 .card {
@@ -251,7 +256,6 @@ p {
     align-items: center;
     border: 1px solid #ccc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
 }
 
 .hidden-side {
