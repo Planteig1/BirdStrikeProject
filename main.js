@@ -78,7 +78,7 @@ new Chart(ctx, {
         plugins: {
             title: {
                 display: true,
-                text: 'Bird strikes per year',
+                text: 'Overview of bird strikes per year from 1990 to 2022',
                 position: 'top',
                 color: 'white'
             },
@@ -381,7 +381,7 @@ function updateChart (chartNumber) {
                     plugins: {
                         title: {
                             display: true,
-                            text: 'Bird strikes per month',
+                            text: 'Total amount of bird strikes per month from 1990 to 2022',
                             position: 'top',
                             color: 'white'
                         },
@@ -442,7 +442,7 @@ function updateChart (chartNumber) {
                     plugins: {
                         title: {
                             display: true,
-                            text: 'Animal species struck by plane',
+                            text: 'Other animal species struck by plane',
                             position: 'top',
                             color: 'white'
                         },

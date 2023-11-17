@@ -36,7 +36,15 @@ nav {
 nav > div {
     display: flex;
     align-items: center;
-    margin: 10px;
+    margin: 25px;
+}
+
+.dead-bird {
+    position: fixed;
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }
 
 p {
@@ -65,6 +73,7 @@ p {
 .introduction {
     height: 800px;
 }
+
 
 
 /* Flip-text-animation */
@@ -209,6 +218,14 @@ p {
 
 
 /*Conclusion*/
+
+.conclusion h1 {
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+    font-size: 40px;
+}
+
 ul {
     list-style-type: none;
 }
@@ -252,4 +269,9 @@ ul {
 
 .hidden-side {
     display: none;
+}
+
+.stop-airplane {
+    display: flex;
+    justify-content: center;
 }
