@@ -125,6 +125,16 @@ p {
     border-radius: 10% /50%;
 }
 
+.picture a {
+    color: black;
+    text-decoration: none;
+}
+
+.picture a:visited {
+    color: black;
+}
+
+
 .picture {
     display: flex;
     justify-content: right;
