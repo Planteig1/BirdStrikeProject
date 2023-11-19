@@ -6,7 +6,7 @@
     user-select: none;
 }
 
-/* Scroll effect */
+/* Scroll effect --> Lucas */
 html {
     scroll-snap-type: y mandatory;
     scroll-padding-top: 50px;
@@ -47,6 +47,7 @@ nav > div {
 
 }
 
+/* design til tekst til graferne --> Rasmus*/
 p {
     font-size: 35px;
     color: #95B0B0;
@@ -56,7 +57,7 @@ p {
 }
 
 
-/* Bird-count-striker*/
+/* Bird-count-striker --> Rasmus*/
 .counter {
     display: flex;
     flex-direction: row;
@@ -75,7 +76,7 @@ p {
 }
 
 
-/* Flip-text-animation */
+/* Flip-text-animation --> Lucas */
 .flip-text-container {
     display: block;
     justify-content: center;
@@ -127,7 +128,7 @@ p {
     100% { margin-top: -540px; }
 }
 
-/* Join us now picture*/
+/* Join us now picture --> Rasmus/ Sofie */
 #logo {
     height: 170px;
     border-radius: 10% /50%;
@@ -163,7 +164,7 @@ p {
 
 
 
-/*Bird striker per year, chart 1*/
+/*Bird striker per year, chart 1 --> Lucas/ Sofie */
 .yearChart {
     display: flex;
     justify-content: flex-start;
@@ -182,7 +183,8 @@ p {
     justify-content: space-around;
 }
 
-/* Bird strike per month in total from 1990-2022 */
+
+/* Bird strike per month in total from 1990-2022 --> Sofie */
 .monthChart {
     display: flex;
     flex-direction: row-reverse;
@@ -200,6 +202,8 @@ p {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+/* Other species hit by plane --> Sofie */
+
 .speciesChart {
     display: flex;
     flex-direction: row-reverse;
@@ -216,7 +220,7 @@ p {
 }
 
 
-/*Conclusion*/
+/* Conclusion --> Rasmus */
 .conclusion {
     height: 200vh;
     display: flex;
