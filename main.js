@@ -2,7 +2,7 @@
 const counterForBirdStrikes = document.querySelector("#counter-bird-strike")
 const counterForBirdYearsLost = document.querySelector("#counter-bird-year-lost")
 
-// Counter for bird strikes
+// Counter for bird strikes --> Sofie
 function birdCounter () {
     let sum = 1;
     let speed = 1000
@@ -32,7 +32,7 @@ function birdCounter () {
 birdCounter();
 
 
-// Average bird lifespan counter
+// Average bird lifespan counter --> Rasmus
 let sumForBirdYearsLost = 0
 function birdYearsLost () {
     // Create a random number between 5 and 10 ( Average lifespan for waterfowl 31% of all strikes)
@@ -41,18 +41,15 @@ function birdYearsLost () {
     sumForBirdYearsLost += randomYearsLost
 
     counterForBirdYearsLost.innerText = sumForBirdYearsLost
-
-
 }
 
 
-// Bird Strikes Per Year Chart
+// Bird Strikes Per Year Chart - Lucas
 
 // Format Data
 let arrayWithYears = [];
 let arrayWithDataForYears = [];
 function formatDataForYear () {
-
     yearData.forEach((year) => {
         arrayWithYears.push(year.INCIDENT_YEAR)
         arrayWithDataForYears.push(year.amount)
@@ -125,7 +122,7 @@ new Chart(ctx, {
 });
 
 
-// Bird Strikes Per Month
+// Bird Strikes Per Month --> Rasmus
 
 // Format Data
 let arrayWithXAndYDataPointsForPerMonth = [];
@@ -140,8 +137,9 @@ function formatPerMonthData () {
 }
 formatPerMonthData();
 
-// Create Animation For Chart
 const ctx2 = document.querySelector('#chart2');
+
+// Create Animation For Chart | Animation from chart.js documentation
 
 const totalDuration = 8000;
 const delayBetweenPoints = totalDuration / arrayWithXAndYDataPointsForPerMonth.length;
@@ -236,7 +234,7 @@ let chart2 = new Chart(ctx2, {
     }
 });
 
-// Animal chart
+// Animal chart --> Sofie
 
 // Format Data
 let arrayWithAnimalNames = [];
@@ -320,7 +318,7 @@ let chart3 = new Chart(ctx3, {
 });
 
 
-
+// --> Rasmus
 //Check Scroll position
 let alreadyHappenedForChart2 = 0
 let alreadyHappenedForChart3 = 0
@@ -353,7 +351,7 @@ function checkScrollPosition () {
     }
 
 }
-
+// --> Rasmus
 window.addEventListener("scroll",() => {
     checkScrollPosition()
 })
@@ -495,7 +493,7 @@ function updateChart (chartNumber) {
         }
 }
 
-// Animal cards
+// Animal cards --> Rasmus
 
 const allCards = document.querySelectorAll(".card")
 

@@ -51,6 +51,7 @@ nav > div {
 p {
     font-size: 35px;
     color: #95B0B0;
+
     text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
     1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
     margin-left: 2rem;
@@ -128,7 +129,7 @@ p {
     100% { margin-top: -540px; }
 }
 
-/* Join us now picture --> Rasmus/ Sofie */
+/* Join us now picture --> Sofie */
 #logo {
     height: 170px;
     border-radius: 10% /50%;
