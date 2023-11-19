@@ -495,12 +495,35 @@ function updateChart (chartNumber) {
         }
 }
 
-// CARD FLIP
+// Animal cards
 
 const allCards = document.querySelectorAll(".card")
 
 allCards.forEach((card) => {
     card.addEventListener("click",() => {
+        let currentImg = card.querySelector("img")
+        let currentText = card.querySelector("p")
+        let originalText = currentText.innerText
+        let originalImg = currentImg.src
 
+        if (card.classList.contains("bear")) {
+
+            currentText.innerText = "or else you'll be responsible for their death!!!"
+            currentText.style.color = "red"
+            currentImg.src = "sadbear.jpeg"
+        } else if (card.classList.contains("deer")) {
+            currentText.innerText = "or else you'll be responsible for their death!!!"
+            currentText.style.color = "red"
+            currentImg.src = "saddeer.png"
+        } else if (card.classList.contains("seal")) {
+            currentText.innerText = "or else you'll be responsible for their death!!!"
+            currentText.style.color = "red"
+            currentImg.src = "sadseal.jpeg"
+        }
+        setTimeout(() => {
+            currentText.innerText = originalText
+            currentText.style.color = "#95B0B0"
+            currentImg.src = originalImg
+        }, 3000)
     })
 })
